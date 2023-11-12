@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { useShoppingCart } from "use-shopping-cart";
@@ -13,11 +13,10 @@ export default function CheckoutNow({
     price,
     price_id,
 }: ProductCart) {
-
     const { checkoutSingleItem } = useShoppingCart();
 
-    function buyNow(price_id: string) {
-        checkoutSingleItem(price_id);
+    function buyNow(priceId: string) {
+        checkoutSingleItem(priceId);
     }
 
     const product = {
@@ -28,7 +27,6 @@ export default function CheckoutNow({
         image: urlFor(image).url(),
         price_id: price_id,
     };
-
     return (
         <Button
             variant="outline"
@@ -38,5 +36,5 @@ export default function CheckoutNow({
         >
             Checkout Now
         </Button>
-    )
+    );
 }
